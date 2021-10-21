@@ -1,17 +1,17 @@
 <?php
 
-$array = array("cat", "fish", "fox");
+$array = array("ayam", "ikan", "kucing");
 _p($array, "1. original array");
 
-array_push($array, "dog");
+array_push($array, "burung");
 _p($array, "2. array push");
 
-array_pop($array);
-_p($array, "4. array pop");
+$replacements = array(0 => "Kucing Anggora");
+$sisa = array_replace($array, $replacements);
+_p($sisa, "7. array replace");
 
-$sisa = array_slice($array, -1);
-_p($sisa, "6. array slice");
-
+array_splice($array, 1);
+_p($array, "6. array splice");
 
 function _p($output, $title){
   echo $title;
