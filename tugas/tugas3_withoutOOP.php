@@ -1,19 +1,24 @@
+<!-- plz read file readme.md first before u check my file, thx sir -->
+
 <?php
 
 $array = array("ayam", "ikan", "kucing");
-_p($array, "1. original array");
+coba($array, "1. original array");
 
 array_push($array, "burung");
-_p($array, "2. array push");
+coba($array, "2. array push");
 
 $replacements = array(0 => "Kucing Anggora");
 $sisa = array_replace($array, $replacements);
-_p($sisa, "7. array replace");
+coba($sisa, "3. array replace");
 
-array_splice($array, 1);
-_p($array, "6. array splice");
+array_splice($array, 1, 1);
+coba($array, "x. array splice");
 
-function _p($output, $title){
+unset($array[1]);
+coba($array, "x. array unset");
+
+function coba($output, $title){
   echo $title;
   echo "<br>";
   print_r($output);

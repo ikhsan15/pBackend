@@ -1,3 +1,5 @@
+<!-- plz read file readme.md first before u check my file, thx sir -->
+
 <?php
 
 # membuat class Animal
@@ -32,11 +34,7 @@ class Animal{
   # parameter: index
   public function destroy($index){
     # gunakan method unset atau array_splice untuk menghapus data array
-    // $animal = array('ayam', 'ikan', 'kucing');
-    // // array_splice($animal, 0, 1);
-    // unset ($animal[1]);
-    // print_r($animal);
-    // echo "<br>";
+    return array_splice($this->animals, $index, 1);
   }
 }
 
@@ -62,3 +60,4 @@ echo "Destroy - Menghapus hewan <br>";
 $animal->destroy(1);
 $animal->index();
 echo "<br>";
+
