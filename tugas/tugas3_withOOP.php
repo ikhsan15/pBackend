@@ -19,7 +19,7 @@ class Animal{
     foreach ($this->animals as $animal){
       print_r($animal);
       echo "<br>";
-  }
+    }
   }
   public function store($data){
     # gunakan method array_push untuk menambahkan data baru
