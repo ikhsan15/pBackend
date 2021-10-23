@@ -3,6 +3,10 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+# first u have to import the controller
+use App\Http\Controllers\AnimalController;
+
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -19,21 +23,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 // create route GET for returning a data animals
-Route::get('/animals', function(){
-  echo "ini adalah daftar animals";
-});
+Route::get('/animals', [AnimalController::class, 'index']);
 
 // create route POST for storing the data animals
-Route::post('/animals', function(){
-  echo "add new daftar animals";
-});
+Route::post('/animals', [AnimalController::class, 'create']);
 
 // create route PUT for updateing the data animals
-Route::put('/animals/{id}', function($id){
-  echo "update daftar animals dari id $id";
-});
+Route::put('/animals/{id}', [AnimalController::class, 'update']);
 
 // create route DELETE for remove the data animals
-Route::delete('/animals/{id}', function($id){
-  echo "delete daftar animals dari id $id";
-});
+Route::delete('/animals/{id}', [AnimalController::class, 'delete']);
