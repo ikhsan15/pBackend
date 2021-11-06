@@ -11,7 +11,7 @@ class StudentController extends Controller{
 
     return response()->json($data, 200);
   }
-  
+
   function create(Request $request){
     // menerima data request dari body
     $nama     = $request->nama;
@@ -36,10 +36,25 @@ class StudentController extends Controller{
   }
 
   function update(Request $request, $id){
+    $student = Student::findOrFail($id);
+    $student->update($request->all());
 
+    $response = [
+      'message' => 'student is updated succesfully',
+      'data' => $student
+    ];
+
+    return response()->json($response,200);
   }
 
   function destroy($id){
+    $stundent = Student::findOrFail($id);
+    $stundent->delete();
+    
+    $response = [
+      'message' => 'student is deleted succesfully'
+    ];
 
+    return response()->json($response,200);
   }
 }
