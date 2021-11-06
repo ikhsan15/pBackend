@@ -35,3 +35,4 @@ Route::delete('/animals/{id}', [AnimalController::class, 'delete']);
 
 // STUDENT API
 Route::get('/students', [StudentController::class, 'index']);
+Route::post('/students', [StudentController::class, 'create']);
