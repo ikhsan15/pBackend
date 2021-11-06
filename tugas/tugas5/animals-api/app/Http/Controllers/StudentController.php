@@ -36,7 +36,7 @@ class StudentController extends Controller{
   }
 
   function update(Request $request, $id){
-    $student = Student::findOrFail($id);
+    $student = Student::find($id);
     $student->update($request->all());
 
     $response = [
@@ -44,17 +44,67 @@ class StudentController extends Controller{
       'data' => $student
     ];
 
-    return response()->json($response,200);
+    return response()->json($response, 200);
   }
 
+  // isfha style
+  // function update(Request $request, $id){
+  //   // menerima data request dari body
+  //   $nama     = $request->nama;
+  //   $nim      = $request->nim;
+  //   $email    = $request->email;
+  //   $jurusan  = $request->jurusan;
+
+  //   // cari data student berdasarkan id
+  //   $data = Student::find($id);
+
+  //   if($data){
+  //     $data->update([
+  //       'nama'    => $nama,
+  //       'nim'     => $nim,
+  //       'email'   => $email,
+  //       'jurusan' => $jurusan
+  //     ]);
+
+  //     return response()->json($data, 200);
+  //   }
+  //   else{
+  //     $errorMessage = [
+  //       'message' => 'data not found'
+  //     ];
+  //     return response()->json($errorMessage, 404);
+  //   }
+  // }
+
   function destroy($id){
-    $stundent = Student::findOrFail($id);
+    $stundent = Student::find($id);
     $stundent->delete();
-    
+
     $response = [
       'message' => 'student is deleted succesfully'
     ];
 
-    return response()->json($response,200);
+    return response()->json($response, 200);
   }
+
+  // isfha style
+  // function destroy($id){
+  //   $data = Student::find($id);
+
+  //   if($data){
+  //     $data-delete();
+
+  //     $successMessage = [
+  //       'message' => 'deleted succesfully'
+  //     ];
+  //     return response()->json($successMessage, 204);
+  //   }
+  //   else{
+  //     $errorMessage = [
+  //       'message' => 'data not found'
+  //     ];
+  //     return response()->json($errorMessage, 404);
+  //   }
+  // }
+
 }
