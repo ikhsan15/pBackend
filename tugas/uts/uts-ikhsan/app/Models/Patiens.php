@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Patiens extends Model
 {
-    use HasFactory;
+  use HasFactory;
 
-    protected $fillable = [
-        'name',
-        'phone',
-        'address',
-        'status',
-        'in_date_at',
-        'out_date_at',
-    ];
+  protected $fillable = [
+    'name',
+    'phone',
+    'address',
+    'status',
+    'in_date_at',
+    'out_date_at',
+  ];
 }
