@@ -16,7 +16,7 @@ const main = () => {
   update(0, "Kelapa");
 
   console.log("\nMethod Destroy - Menghapus data 1");
-  destroy(3);
+  destroy(1);
 }
 
 main()
