@@ -3,22 +3,12 @@ const express = require("express");
 // buat object express
 const app = express();
 
-// definisikan app
+// definisikan port
 app.listen(3000);
 
-app.get("/", function(req, res){
-  res.send("hello express");
-})
+// import router
+const router = require("./routes/api");
 
-app.get("/students", function(req, res){
-  res.send("menampilkan data student");
-})
-app.post("/students", function(req, res){
-  res.send("menambahkan data student");
-})
-app.put("/students", function(req, res){
-  res.send("mengedit data student");
-})
-app.delete("/students", function(req, res){
-  res.send("menghapus data student");
-})
+// pasang router
+app.use(router);
+
